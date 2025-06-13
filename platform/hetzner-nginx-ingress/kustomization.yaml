@@ -17,6 +17,7 @@ helmCharts:
             load-balancer.hetzner.cloud/use-private-ip: "true"
             load-balancer.hetzner.cloud/uses-proxyprotocol: "true"
             load-balancer.hetzner.cloud/http-redirect-https: "false"
+            load-balancer.hetzner.cloud/node-selector: "node-role.kubernetes.io/worker="
             # load-balancer.hetzner.cloud/hostname: <hostname>
           targetPorts:
             https: http
