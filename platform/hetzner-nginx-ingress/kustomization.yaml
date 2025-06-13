@@ -23,3 +23,6 @@ helmCharts:
             # load-balancer.hetzner.cloud/hostname: <hostname>
           targetPorts:
             https: http
+        # Reference: https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap
+        config:
+          use-proxy-protocol: "true"
