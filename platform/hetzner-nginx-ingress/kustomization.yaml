@@ -9,6 +9,8 @@ helmCharts:
     valuesInline:
       controller:
         kind: DaemonSet
+        hostPort:
+          enabled: true
         ingressClassResource:
           default: true
         service:
