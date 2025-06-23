@@ -8,7 +8,8 @@ helmCharts:
     namespace: ingress-nginx
     valuesInline:
       controller:
-        kind: DaemonSet
+        kind: Deployment
+        replicaCount: 6
         # hostPort:
         #   enabled: true
         ingressClassResource:
