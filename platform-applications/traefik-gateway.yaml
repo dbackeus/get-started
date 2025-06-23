@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: traefik
+  name: traefik-gateway
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "3"
@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: platform
   source:
-    path: platform/traefik
+    path: platform/traefik-gateway
     repoURL: https://github.com/dbackeus/get-started.git
   syncPolicy:
     automated:
