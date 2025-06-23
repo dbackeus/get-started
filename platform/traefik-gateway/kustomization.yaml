@@ -13,6 +13,9 @@ helmCharts:
     valuesInline:
       gateway:
         enabled: true
+      deployment:
+        kind: Deployment
+        replicas: 6
       service:
         enabled: true
         spec:
