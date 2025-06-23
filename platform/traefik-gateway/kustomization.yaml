@@ -1,0 +1,27 @@
+# https://doc.traefik.io/traefik/providers/kubernetes-gateway/
+
+resources:
+  - ./namespace.yaml
+  # Install the additional Traefik RBAC required for Gateway API
+  # - https://raw.githubusercontent.com/traefik/traefik/v3.4/docs/content/reference/dynamic-configuration/kubernetes-gateway-rbac.yml
+helmCharts:
+  - name: traefik
+    repo: https://traefik.github.io/charts
+    releaseName: traefik
+    version: 36.1.0 # App version 3.4.1
+    namespace: traefik
+    valuesInline:
+      gateway:
+        enabled: true
+      service:
+        enabled: true
+        spec:
+          externalTrafficPolicy: Local
+        annotations:
+          load-balancer.hetzner.cloud/name: traefik-gateway
+          load-balancer.hetzner.cloud/location: hel1
+          load-balancer.hetzner.cloud/use-private-ip: "true"
+          load-balancer.hetzner.cloud/uses-proxyprotocol: "false"
+          load-balancer.hetzner.cloud/http-redirect-https: "false"
+          load-balancer.hetzner.cloud/node-selector: node-role.kubernetes.io/worker=
+          # load-balancer.hetzner.cloud/hostname: <hostname>
