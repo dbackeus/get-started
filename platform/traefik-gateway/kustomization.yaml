@@ -11,8 +11,11 @@ helmCharts:
     version: 36.1.0 # App version 3.4.1
     namespace: traefik
     valuesInline:
+      providers:
+        kubernetesGateway:
+          enabled: true
       gateway:
-        enabled: true
+        namespacePolicy: All
       deployment:
         kind: Deployment
         replicas: 6
