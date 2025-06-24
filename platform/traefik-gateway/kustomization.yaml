@@ -37,8 +37,8 @@ helmCharts:
           load-balancer.hetzner.cloud/node-selector: node-role.kubernetes.io/worker=
           # load-balancer.hetzner.cloud/hostname: <hostname>
       logs:
-        general:
-          level: DEBUG
+        # general:
+        #   level: DEBUG
         access:
           enabled: true
 
