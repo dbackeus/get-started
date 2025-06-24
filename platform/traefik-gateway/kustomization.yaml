@@ -2,10 +2,6 @@
 
 resources:
   - ./namespace.yaml
-  # Install/update the Kubernetes Gateway API CRDs
-  # - https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.1/standard-install.yaml
-  # Install the additional Traefik RBAC required for Gateway API
-  - https://raw.githubusercontent.com/traefik/traefik/v3.4/docs/content/reference/dynamic-configuration/kubernetes-gateway-rbac.yml
 helmCharts:
   - name: traefik
     repo: https://traefik.github.io/charts
@@ -47,12 +43,9 @@ helmCharts:
         #   level: DEBUG
         access:
           enabled: true
-          format: json
+          format: json # only way to get the Host header
           fields:
             headers:
-              defaultMode: drop # drop all headers unless listed
+              defaultMode: drop
               names:
                 Host: keep
-
-
-# providers.kubernetesCRD.allowCrossNamespace: true
