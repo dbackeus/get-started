@@ -17,11 +17,9 @@ helmCharts:
       providers:
         kubernetesGateway:
           enabled: true
-      gateway:
-        namespacePolicy: All
-      listeners:
-        web:
-          namespacePolicy: All
+      # listeners:
+      #   web:
+      #     namespacePolicy: All
       deployment:
         kind: Deployment
         replicas: 1
