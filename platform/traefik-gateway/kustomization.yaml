@@ -41,6 +41,12 @@ helmCharts:
         #   level: DEBUG
         access:
           enabled: true
+          format: json
+          fields:
+            headers:
+              defaultMode: drop # drop all headers unless listed
+              names:
+                Host: keep
 
 
 # providers.kubernetesCRD.allowCrossNamespace: true
