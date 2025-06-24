@@ -66,3 +66,4 @@ spec:
     - backendRefs:
         - name: hello-world
           port: 80
+          namespace: default
