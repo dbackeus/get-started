@@ -17,6 +17,12 @@ helmCharts:
       providers:
         kubernetesGateway:
           enabled: true
+      ports:
+        web:
+          forwardedHeaders:
+            insecure: true
+          proxyProtocol:
+            insecure: true
       gateway:
         listeners:
           web:
