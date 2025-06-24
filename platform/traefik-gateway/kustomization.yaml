@@ -34,3 +34,6 @@ helmCharts:
           load-balancer.hetzner.cloud/http-redirect-https: "false"
           load-balancer.hetzner.cloud/node-selector: node-role.kubernetes.io/worker=
           # load-balancer.hetzner.cloud/hostname: <hostname>
+      logs:
+        access:
+          enabled: true
