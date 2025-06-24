@@ -52,3 +52,17 @@ spec:
                 name: hello-world
                 port:
                   number: 80
+---
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: hello-world
+spec:
+  parentRefs:
+    - name: traefik-gateway
+  hostnames:
+    - hello-world.95.217.173.30.nip.io
+  rules:
+    - forwardTo:
+      - serviceName: hello-world
+        port: 80
