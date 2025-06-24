@@ -69,5 +69,5 @@ spec:
     - hello-world.95.217.173.30.nip.io
   rules:
     - backendRefs:
-        - name: hello-world
-          port: 80
+      - name: hello-world
+        port: 80
