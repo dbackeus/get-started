@@ -21,7 +21,7 @@ helmCharts:
         namespacePolicy: All
       deployment:
         kind: Deployment
-        replicas: 6
+        replicas: 1
       service:
         enabled: true
         spec:
