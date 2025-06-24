@@ -12,6 +12,7 @@ helmCharts:
     releaseName: traefik
     version: 36.1.0 # App version 3.4.1
     namespace: traefik
+    includeCRDs: true
     valuesInline:
       providers:
         kubernetesGateway:
