@@ -19,6 +19,9 @@ helmCharts:
           enabled: true
       gateway:
         namespacePolicy: All
+      listeners:
+        web:
+          namespacePolicy: All
       deployment:
         kind: Deployment
         replicas: 1
