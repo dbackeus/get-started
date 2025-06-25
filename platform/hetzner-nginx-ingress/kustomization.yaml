@@ -23,7 +23,7 @@ helmCharts:
             load-balancer.hetzner.cloud/http-redirect-https: "false"
             load-balancer.hetzner.cloud/node-selector: node-role.kubernetes.io/worker=
             # load-balancer.hetzner.cloud/hostname: <hostname>
-          externalTrafficPolicy: Local
+          externalTrafficPolicy: Cluster
           targetPorts:
             https: http
         # Reference: https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap
